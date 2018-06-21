@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test Dom</title>
+</head>
+<body>
+  <script>
+    src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js">
+  </script>
+  <link rel="import" href="components/google-map/google-map.html">
+  <script>
+    var superHerosPrototype = Object.create(HTMLElement.prototype);
+    superHerosPrototype.createdCallback = function() {
+      this.innerHTML = '<h1>Superman</h1>';
+    };
+    var SuperHerosElement = document.registerElement  ('super-heros', { prototype: superHerosPrototype });
+    document.body.appendChild(new SuperHerosElement());
+  </script>
+  <google-map latitude="37.790" longitude="-122.390"></google-map>
+</body>
+</html>
